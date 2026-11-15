@@ -262,7 +262,17 @@ struct LibraryView: View {
         case .gallery:
             HStack(spacing: 0) { gallery; sidePanel }
         case .counsel:
-            HStack(spacing: 0) { snippetList; sidePanel }
+            HStack(spacing: 0) {
+                snippetList
+                Divider()
+                // The editor takes the remaining width, so the list sits right beside the sidebar.
+                if let snippet = selected {
+                    detail(snippet, showFile: false).frame(maxWidth: .infinity)
+                } else {
+                    ContentUnavailableView("Select a snippet", systemImage: "text.quote")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            }
         case .docket:
             VStack(spacing: 0) { docketTable; bottomPanel }
         }
@@ -402,6 +412,7 @@ struct LibraryView: View {
                     }
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading) // the tiles fill the width instead of bunching left
             .padding(28)
         }
     }
@@ -674,7 +685,16 @@ struct SnippetDetail: View {
         segments(snippet.text).reduce(into: AttributedString()) { out, segment in
             switch segment {
             case .text(let text):
-                out += AttributedString(text)
+                // `$|$` is where the cursor lands; show it as a readable marker rather than raw syntax.
+                for (i, part) in text.components(separatedBy: "$|$").enumerated() {
+                    if i > 0 {
+                        var cursor = AttributedString(" cursor ")
+                        cursor.foregroundColor = .orange
+                        cursor.backgroundColor = Color.orange.opacity(0.12)
+                        out += cursor
+                    }
+                    out += AttributedString(part)
+                }
             case .token(let name, let isQuestion):
                 let field = name.split(separator: ".").last.map(String.init) ?? name
                 let type = snippet.variables[name] ?? "fill-in"
