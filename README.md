@@ -13,6 +13,10 @@
 
 Espanso keeps doing the typing. Snippet Studio just makes your snippets easy to write, find, and trust.
 
+<p align="center">
+  <img src="docs/images/gallery.png" alt="Snippet Studio's Gallery view: color-coded snippet tiles grouped by Email, Work, Code and Everyday" width="100%">
+</p>
+
 > **Try it without touching your own snippets:** the repository ships a [sample library](demo/). See [Try the demo](#try-the-demo).
 
 ---
@@ -28,6 +32,17 @@ Espanso is a great text expander, but its snippets live in YAML files. Getting o
 - **"Try it" preview.** See exactly what a snippet will type, with sample answers filled in.
 - **Duplicate.** Copy a snippet, including its date formats, formatting and form settings, and give the copy a new shortcut.
 - **Search** across shortcuts, names and text (⌘F).
+
+## Screenshots
+
+| Edit with fill-in questions | Counsel view |
+|---|---|
+| <img src="docs/images/editor.png" alt="Editing a snippet: name, shortcut, insert buttons and the questions it asks"> | <img src="docs/images/counsel.png" alt="Counsel view: sidebar of groups, snippet list and detail panel"> |
+
+<p align="center">
+  <img src="docs/images/docket.png" alt="Docket view: a sortable table of shortcuts, names, groups and files" width="100%">
+  <br><em>Docket view: a sortable table, with the selected snippet below</em>
+</p>
 
 ## Safety first
 
