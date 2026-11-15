@@ -1,0 +1,133 @@
+# Sample library for trying Snippet Studio (and for its screenshots).
+# Run the app with SNIPPET_STUDIO_DEMO pointing at the demo/ folder; your real Espanso files are never touched.
+matches:
+  # --- Email ---
+  - trigger: ":sig"
+    label: "Email signature"
+    replace: |-
+      Best regards,
+      Alex Rivera
+      Rivera & Co. · (555) 010-2030
+  - trigger: ":thx"
+    label: "Thanks for reaching out"
+    replace: "Thanks for reaching out, {{form1.name}}! I'll get back to you by {{form1.when}}."
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |-
+            Name [[name]]
+            Reply by [[when]]
+  - trigger: ":ooo"
+    label: "Out of office"
+    replace: "I'm out of the office until {{form1.back}} with limited access to email. For anything urgent, please contact {{form1.backup}}."
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |-
+            Back on [[back]]
+            Urgent contact [[backup]]
+
+  # --- Work ---
+  - trigger: ":standup"
+    label: "Daily standup"
+    replace: |-
+      Yesterday: {{form1.yesterday}}
+      Today: {{form1.today}}
+      Blockers: {{form1.blockers}}
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |-
+            Yesterday [[yesterday]]
+            Today [[today]]
+            Blockers [[blockers]]
+          fields:
+            blockers:
+              type: choice
+              values:
+                - None
+                - Waiting on review
+                - Need input from the team
+  - trigger: ":mtg"
+    label: "Meeting notes"
+    replace: |-
+      Meeting notes — {{date}}
+      Attendees: $|$
+      Decisions:
+      Action items:
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%B %-d, %Y"
+  - trigger: ":fu"
+    label: "Follow-up"
+    replace: "Just following up on my message from {{form1.when}} about {{form1.topic}}. Let me know if you need anything else from me."
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |-
+            Sent on [[when]]
+            Topic [[topic]]
+
+  # --- Code ---
+  - trigger: ":bug"
+    label: "Bug report"
+    replace: |-
+      **What happened:** {{form1.what}}
+      **Expected:** {{form1.expected}}
+      **Steps to reproduce:**
+      1. $|$
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |-
+            What happened [[what]]
+            Expected [[expected]]
+          fields:
+            what:
+              multiline: true
+  - trigger: ":pr"
+    label: "Pull request description"
+    replace: |-
+      ## Summary
+      $|$
+
+      ## Testing
+      - [ ] Unit tests pass
+      - [ ] Tried it by hand
+  - trigger: ":todo"
+    label: "TODO comment"
+    replace: "// TODO({{form1.who}}, {{date}}): $|$"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+      - name: form1
+        type: form
+        params:
+          layout: "Owner [[who]]"
+
+  # --- Everyday ---
+  - trigger: ":today"
+    label: "Today's date"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%A, %B %-d, %Y"
+  - trigger: ":shrug"
+    label: "Shrug"
+    replace: "¯\\_(ツ)_/¯"
+  - trigger: ":addr"
+    label: "Mailing address"
+    replace: |-
+      123 Example Street, Suite 400
+      Springfield, CA 90000

@@ -1,0 +1,24 @@
+name: Bug report
+description: Something isn't working as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: snippet
+    attributes:
+      label: Example snippet (optional)
+      description: A made-up snippet that shows the problem. Please don't paste private snippet text.
+      render: yaml
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: macOS version, Espanso version (`espanso --version`), and Snippet Studio commit or release
+    validations:
+      required: true

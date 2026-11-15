@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security problem
+    url: https://github.com/bbenjyesq/snippet-studio/security/advisories/new
+    about: Please report security issues privately.
+  - name: Problem with Espanso itself (expansion, hotkeys, packages)
+    url: https://github.com/espanso/espanso/issues
+    about: Snippet Studio only edits Espanso's files; expansion problems belong to the Espanso project.

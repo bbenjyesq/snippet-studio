@@ -1,0 +1,53 @@
+{
+  "editedAt": {},
+  "groupOf": {
+    ":addr": "CC72B6C6-F75C-5967-B6A2-4F79C4A483AF",
+    ":bug": "D17E334F-AB9A-5BA3-B7EE-9C82F0539EC8",
+    ":fu": "956374C3-9F58-5177-B4D5-09F248B2E71D",
+    ":mtg": "956374C3-9F58-5177-B4D5-09F248B2E71D",
+    ":ooo": "BE77A60A-5FF7-589E-A28F-4EE8A4F5F8C6",
+    ":pr": "D17E334F-AB9A-5BA3-B7EE-9C82F0539EC8",
+    ":shrug": "CC72B6C6-F75C-5967-B6A2-4F79C4A483AF",
+    ":sig": "BE77A60A-5FF7-589E-A28F-4EE8A4F5F8C6",
+    ":standup": "956374C3-9F58-5177-B4D5-09F248B2E71D",
+    ":thx": "BE77A60A-5FF7-589E-A28F-4EE8A4F5F8C6",
+    ":today": "CC72B6C6-F75C-5967-B6A2-4F79C4A483AF",
+    ":todo": "D17E334F-AB9A-5BA3-B7EE-9C82F0539EC8"
+  },
+  "groups": [
+    {
+      "color": "green",
+      "id": "BE77A60A-5FF7-589E-A28F-4EE8A4F5F8C6",
+      "name": "Email"
+    },
+    {
+      "color": "blue",
+      "id": "956374C3-9F58-5177-B4D5-09F248B2E71D",
+      "name": "Work"
+    },
+    {
+      "color": "purple",
+      "id": "D17E334F-AB9A-5BA3-B7EE-9C82F0539EC8",
+      "name": "Code"
+    },
+    {
+      "color": "orange",
+      "id": "CC72B6C6-F75C-5967-B6A2-4F79C4A483AF",
+      "name": "Everyday"
+    }
+  ],
+  "iconOf": {
+    ":addr": "folder.fill",
+    ":bug": "exclamationmark.shield.fill",
+    ":fu": "bubble.left.fill",
+    ":mtg": "calendar",
+    ":ooo": "tray.fill",
+    ":pr": "doc.text.fill",
+    ":shrug": "star.fill",
+    ":sig": "signature",
+    ":standup": "person.2.fill",
+    ":thx": "envelope.fill",
+    ":today": "calendar",
+    ":todo": "list.bullet"
+  }
+}
